@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>Main</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Welcome, {{ user }}</h2>
+    <p>You are logged in. Click below to log out.</p>
+    <form action="{{ url_for('logout') }}" method="post">
+        <input type="submit" value="Logout">
+    </form>
+    <div id="score-div" style="cursor:pointer; padding: 10px; border: 1px solid black;">
+        Click here to increase your score!
+	<br>Your score is: <span id="user-score">{{ score }}</span>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#score-div').click(function(){
+                $.post('/increase_score', function(data){
+                    //alert('Your new score is: ' + data.score);
+		    $('#user-score').text(data.score);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+<div id="wrap">
+    <div class="loginbg">
+	    <h4>Login</h4>
+        <div class="inputzone">
+	        <form method="post">
+	            <div class="inputzone_id">
+	                <input type="text" id="userId" name="userId" placeholder="ID">
+	            </div>
+	            <div class="inputzone_pw">
+	                <input type="password" id="password" name="password" placeholder="PW">
+	            </div>
+	            <div class="inputzone_login">
+			    <button class="login" type="submit">Login</button>
+	            </div>
+			</form>
+        </div>
+    </div><!--loginbg 끝-->
+</div>
+</body>
+</html>
+
